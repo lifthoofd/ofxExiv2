@@ -19,6 +19,9 @@ void ofxExiv2::loadImage(string filePath){
 }
 
 //--------------------------------------------------------------------------------
+///deze functie moet iets returnen, in alle waarschijnlijkheid wordt dat een vector met alle waardes uit i->key(), i->typeName()
+///en i->value(), zo zouden we misschien voor elke foto een xml file kunnen maken met alle info erin die we nodig hebben
+///om verschillende fotoos in ipg bijelkaar te zoeken
 void ofxExiv2::getMetaData(ofxMetaDataType metaDataType){
     //gets the metadata per data protocol -> EXIF,IPTC or XMP
     if(metaDataType == OFX_EXIV2_EXIF){
