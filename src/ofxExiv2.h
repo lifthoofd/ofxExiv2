@@ -12,9 +12,8 @@ class ofxExiv2{
         void loadImage(string filePath);
         void getMetaData(ofxMetaDataType metaDataType);
 
+    private:
         Exiv2::Image::AutoPtr image;
-
-//    private:
 };
 
 #endif
