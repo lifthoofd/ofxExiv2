@@ -37,7 +37,7 @@ class ofxExiv2{
 
         void loadImage(string filePath);
 
-        int getDataFieldSize(ofxMetaDataType metaDataType);
+        int getDataFieldSize(ofxMetaDataType metaDataType);             //needs a better name then what i gave it
 
         dataField getDataField(int index, ofxMetaDataType metaDataType);
 
