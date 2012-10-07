@@ -1,8 +1,7 @@
 /*  ofxExiv2
-*   version: 0.01
 *   by Erik Overmeire
 *
-*   openframeworks addon for extracting metadat from images
+*   openframeworks addon for extracting metadata from images
 *   using the exiv2 library
 */
 

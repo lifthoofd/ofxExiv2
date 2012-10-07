@@ -1,18 +1,28 @@
+/*  ofxExiv2
+*   by Erik Overmeire
+*
+*   openframeworks addon for extracting metadata from images
+*   using the exiv2 library
+*/
+
 #include "ofxExiv2.h"
 
 //--------------------------------------------------------------------------------
-ofxExiv2::ofxExiv2(){
+ofxExiv2::ofxExiv2()
+{
     //initialize ofxExif
     bIsImageLoaded = false;
 }
 
 //--------------------------------------------------------------------------------
-ofxExiv2::~ofxExiv2(){
-    //destoy ofxExif
+ofxExiv2::~ofxExiv2()
+{
+
 }
 
 //--------------------------------------------------------------------------------
-void ofxExiv2::loadImage(string filePath){
+void ofxExiv2::loadImage(string filePath)
+{
     //load an image to an exiv2 image container
     Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath);
     assert(image.get() != 0);
@@ -102,11 +112,13 @@ void ofxExiv2::loadImage(string filePath){
 }
 
 //--------------------------------------------------------------------------------
+//returns the amount of metadata fields
 int ofxExiv2::getDataFieldSize(ofxMetaDataType metaDataType){
     return allMetaData[metaDataType].size();
 }
 
 //--------------------------------------------------------------------------------
+//returns individual metadata fields
 dataField ofxExiv2::getDataField(int index, ofxMetaDataType metaDataType){
     if(bIsImageLoaded){
         return allMetaData[metaDataType][index];
@@ -115,9 +127,3 @@ dataField ofxExiv2::getDataField(int index, ofxMetaDataType metaDataType){
     }
 }
 
-//*--------
-//* moet er nog iets bij?
-//* Voor dat wat ik ermee wil, nee
-//* Maar als je een complete addon wil leveren moet je de
-//* Metadata ook kunnen bewerken
-//--------*/
